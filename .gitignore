@@ -1,0 +1,6 @@
+.vs
+.DS_Store
+Thumbs.db
+HappyClinic/bin
+HappyClinic/obj
+packages
