@@ -24,7 +24,7 @@ namespace HappyClinic
         public string Name { get; set; }
         public Nullable<int> Price { get; set; }
         public Nullable<int> Qty { get; set; }
-        public string Suplier { get; set; }
+        public string Supplier { get; set; }
         public Nullable<System.DateTime> MfgDate { get; set; }
         public Nullable<System.DateTime> ExpDate { get; set; }
         public string UnitID { get; set; }
