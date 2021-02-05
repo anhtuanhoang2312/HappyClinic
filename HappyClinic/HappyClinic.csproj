@@ -125,6 +125,7 @@
       <DependentUpon>ClinicModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\DataProvider.cs" />
+    <Compile Include="Model\IDGenerator.cs" />
     <Compile Include="Patient.cs">
       <DependentUpon>ClinicModel.tt</DependentUpon>
     </Compile>

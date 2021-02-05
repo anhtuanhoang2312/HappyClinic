@@ -18,10 +18,10 @@ namespace HappyClinic
         public Nullable<System.DateTime> IDdate { get; set; }
         public Nullable<int> Total { get; set; }
         public string PatientID { get; set; }
-        public string AccountID { get; set; }
+        public string Account { get; set; }
         public string ExamID { get; set; }
     
-        public virtual Account Account { get; set; }
+        public virtual Account Account1 { get; set; }
         public virtual ExaminationForm ExaminationForm { get; set; }
         public virtual Patient Patient { get; set; }
     }
