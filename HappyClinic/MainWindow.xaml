@@ -4,9 +4,60 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HappyClinic"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        mc:Ignorable="d" Title=" HappyClinic" Height="650" Width="1200" Icon="/Icons/app.png"
+        RenderOptions.BitmapScalingMode="HighQuality"
+        WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="240"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <hc:SideMenu Name="SideMenu">
+            <hc:SideMenuItem Name="Dashboard" Header="Tổng quan">
+                <hc:SideMenuItem.Icon>
+                    <Image Source="/Icons/dashboard.png" Width="24" Height="24"/>
+                </hc:SideMenuItem.Icon>
+            </hc:SideMenuItem>
+
+            <hc:SideMenuItem Name="Patients" Header="Danh sách bệnh nhân">
+                <hc:SideMenuItem.Icon>
+                    <Image Source="/Icons/patients.png" Width="24" Height="24"/>
+                </hc:SideMenuItem.Icon>
+            </hc:SideMenuItem>
+
+            <hc:SideMenuItem Name="ExaminationForms" Header="Danh sách phiếu khám">
+                <hc:SideMenuItem.Icon>
+                    <Image Source="/Icons/examinationforms.png" Width="24" Height="24"/>
+                </hc:SideMenuItem.Icon>
+            </hc:SideMenuItem>
+
+            <hc:SideMenuItem Name="Invoices" Header="Danh sách hóa đơn">
+                <hc:SideMenuItem.Icon>
+                    <Image Source="/Icons/invoices.png" Width="24" Height="24"/>
+                </hc:SideMenuItem.Icon>
+            </hc:SideMenuItem>
+
+            <hc:SideMenuItem Name="Medicines" Header="Danh sách thuốc">
+                <hc:SideMenuItem.Icon>
+                    <Image Source="/Icons/medicines.png" Width="24" Height="24"/>
+                </hc:SideMenuItem.Icon>
+            </hc:SideMenuItem>
+
+            <hc:SideMenuItem Name="Settings" Header="Cấu hình">
+                <hc:SideMenuItem.Icon>
+                    <Image Source="/Icons/settings.png" Width="24" Height="24"/>
+                </hc:SideMenuItem.Icon>
+                <hc:SideMenuItem Name="MedicineUsage" Header="Cách dùng thuốc"/>
+                <hc:SideMenuItem Name="MedicineUnit" Header="Đơn vị thuốc"/>
+                <hc:SideMenuItem Name="Diseases" Header="Danh sách bệnh"/>
+                <hc:SideMenuItem Name="Accounts" Header="Tài khoản nhân viên"/>
+            </hc:SideMenuItem>
+        </hc:SideMenu>
+
+        <Grid Grid.Column="1" Name="MainContent" Background="#F5F7F9">
+            <local:PatientWindow></local:PatientWindow>
+        </Grid>
     </Grid>
 </Window>
