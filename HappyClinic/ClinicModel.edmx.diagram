@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4c730ad6d2cc4aabb57ccf0d21cc2196" Name="Diagram1">
+        <EntityTypeShape EntityType="ClinicModel.Account" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicModel.Disease" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicModel.ExaminationDetail" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicModel.ExaminationForm" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicModel.Invoice" Width="1.5" PointX="8.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicModel.Medicine" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicModel.MedicineUnit" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicModel.MedicineUsage" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicModel.Patient" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <AssociationConnector Association="ClinicModel.FK_I_A" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicModel.FK_ED_EF" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicModel.FK_ED_M" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicModel.FK_ED_MU" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicModel.FK_EF_P" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicModel.FK_I_EF" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicModel.FK_I_P" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicModel.FK_M_MU" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicModel.ExaminationFormDetail" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
