@@ -20,7 +20,6 @@ namespace HappyClinic
             this.Invoices = new HashSet<Invoice>();
         }
     
-        public string ID { get; set; }
         public string Username { get; set; }
         public string Pwd { get; set; }
         public Nullable<bool> isAdmin { get; set; }
