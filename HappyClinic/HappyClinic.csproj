@@ -129,6 +129,7 @@
     </Compile>
     <Compile Include="Model\DataProvider.cs" />
     <Compile Include="Model\IDGenerator.cs" />
+    <Compile Include="Model\StringExtension.cs" />
     <Compile Include="Patient.cs">
       <DependentUpon>ClinicModel.tt</DependentUpon>
     </Compile>

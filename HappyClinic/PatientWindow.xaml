@@ -103,12 +103,12 @@
                 </hc:Drawer>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <hc:SearchBar Name="keywordTextBox" Width="300" Margin="10" ShowClearButton="True" hc:InfoElement.Placeholder="Tìm kiếm" 
-                              Style="{StaticResource SearchBarPlus}"/>
+                <hc:SearchBar Width="300" Margin="10" ShowClearButton="True" hc:InfoElement.Placeholder="Tìm kiếm tên bệnh nhân" 
+                              Text="{Binding Keyword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding SearchCommand}" Style="{StaticResource SearchBarPlus}"/>
             </StackPanel>
         </Grid>
 
-        <DataGrid Grid.Row="1" AutoGenerateColumns="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+        <DataGrid Name="patientDataGrid"  Grid.Row="1" AutoGenerateColumns="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                               DataGrid.GridLinesVisibility="None" HeadersVisibility="Column" CanUserAddRows="False" SelectionMode="Single"
                               IsReadOnly="True" Margin="10,0,10,10" ItemsSource="{Binding List}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
             <DataGrid.Columns>
