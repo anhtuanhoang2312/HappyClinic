@@ -35,6 +35,17 @@ namespace HappyClinic.ViewModel
             }
         }
 
+        private string _Keyword;
+        public string Keyword
+        {
+            get => _Keyword;
+            set
+            {
+                _Keyword = value;
+                OnPropertyChanged();
+            }
+        }
+
         private string _ID = IDGenerator.createID("BN");
         public string ID { get => _ID; set { _ID = value; OnPropertyChanged(); } }
 
@@ -58,6 +69,9 @@ namespace HappyClinic.ViewModel
 
         public ICommand AddCommand { get; set; }
         public ICommand EditCommand { get; set; }
+
+        public ICommand SearchCommand { get; set; }
+
 
         private void Clear()
         {
@@ -138,6 +152,25 @@ namespace HappyClinic.ViewModel
                 DataProvider.Instance.DB.SaveChanges();
 
                 List = new ObservableCollection<Patient>(DataProvider.Instance.DB.Patients);
+            });
+
+            SearchCommand = new RelayCommand<object>((p) =>
+            {
+                return true;
+            }, (p) =>
+            {
+                if(Keyword == "")
+                {
+                    List = new ObservableCollection<Patient>(DataProvider.Instance.DB.Patients);
+                }
+                else
+                {
+                    var result = from patient in DataProvider.Instance.DB.Patients.ToList()
+                                 where patient.Name.ToLower().AccentRemoved().Contains(Keyword.ToLower().AccentRemoved())
+                                 select patient;
+
+                    List = new ObservableCollection<Patient>(result);
+                }
             });
         }
     }
