@@ -106,6 +106,9 @@
     <Compile Include="Disease.cs">
       <DependentUpon>ClinicModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DiseaseWindow.xaml.cs">
+      <DependentUpon>DiseaseWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ExaminationDetail.cs">
       <DependentUpon>ClinicModel.tt</DependentUpon>
     </Compile>
@@ -133,8 +136,13 @@
       <DependentUpon>PatientWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\DiseaseViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\PatientViewModel.cs" />
+    <Page Include="DiseaseWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

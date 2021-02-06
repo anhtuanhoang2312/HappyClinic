@@ -3,4 +3,5 @@
                     xmlns:viewmodel="clr-namespace:HappyClinic.ViewModel">
     <viewmodel:MainViewModel x:Key="MainVM"></viewmodel:MainViewModel>
     <viewmodel:PatientViewModel x:Key="PatientVM"></viewmodel:PatientViewModel>
+    <viewmodel:DiseaseViewModel x:Key="DiseaseVM"></viewmodel:DiseaseViewModel>
 </ResourceDictionary>
