@@ -4,5 +4,5 @@ Thumbs.db
 HappyClinic/bin
 HappyClinic/obj
 packages
-ClinicDatabase.mdf
-ClinicDatabase_log.ldf
+HappyClinic/ClinicDatabase.mdf
+HappyClinic/ClinicDatabase_log.ldf
