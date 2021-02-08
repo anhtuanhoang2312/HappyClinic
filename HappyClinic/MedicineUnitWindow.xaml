@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="HappyClinic.MedicineUnitWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HappyClinic"
+             mc:Ignorable="d" 
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             d:DesignHeight="650" d:DesignWidth="960"
+             DataContext="{StaticResource MedicineUnitVM}">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/MainResource.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10">
+                <ToggleButton Width="100" HorizontalAlignment="Stretch" Content="Thêm" IsChecked="{Binding IsOpen,ElementName=AddDrawer}" Command="{Binding ClearCommand}"/>
+                <ToggleButton Width="100" Margin="10,0,0,0" HorizontalAlignment="Stretch" Content="Chỉnh sửa" IsChecked="{Binding IsOpen,ElementName=EditDrawer}" Command="{Binding CheckCommand}"/>
+                <hc:Drawer Name="AddDrawer" MaskCanClose="False">
+                    <Border Background="{DynamicResource RegionBrush}" Width="320" BorderThickness="0,1,0,0" BorderBrush="{DynamicResource BorderBrush}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Margin="20,20,0,10" Text="Thêm đơn vị thuốc mới" Style="{StaticResource TextBlockTitleBold}" HorizontalAlignment="Left"/>
+                            <StackPanel Grid.Row="1">
+                                <hc:TextBox Text="{Binding ID}" Margin="20,5" VerticalContentAlignment="Center"
+                TextType="Common" hc:InfoElement.Title="Mã đơn vị" IsEnabled="False"/>
+
+                                <hc:TextBox Text="{Binding Name}" Margin="20,5" VerticalContentAlignment="Center"
+                ShowClearButton="True" TextType="Common" hc:InfoElement.Placeholder="Nhập tên đơn vị" hc:InfoElement.Title="Tên đơn vị"/>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                                    <Button Command="hc:ControlCommands.Close" Width="100" Margin="5,0" Content="Đóng"/>
+                                    <Button Command="{Binding AddCommand}" Content="Thêm" Width="100" Margin="5,0" Style="{StaticResource ButtonPrimary}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </hc:Drawer>
+                <hc:Drawer Name="EditDrawer" MaskCanClose="False">
+                    <Border Background="{DynamicResource RegionBrush}" Width="320" BorderThickness="0,1,0,0" BorderBrush="{DynamicResource BorderBrush}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Margin="20,20,0,10" Text="Sửa thông tin đơn vị thuốc" Style="{StaticResource TextBlockTitleBold}" HorizontalAlignment="Left"/>
+                            <StackPanel Grid.Row="1">
+                                <hc:TextBox Text="{Binding ID}" Margin="20,5" VerticalContentAlignment="Center"
+                TextType="Common" hc:InfoElement.Title="Mã đơn vị" IsEnabled="False"/>
+
+                                <hc:TextBox Text="{Binding Name}" Margin="20,5" VerticalContentAlignment="Center"
+                ShowClearButton="True" TextType="Common" hc:InfoElement.Placeholder="Nhập tên đơn vị" hc:InfoElement.Title="Tên đơn vị"/>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                                    <Button Command="hc:ControlCommands.Close" Width="100" Margin="5,0" Content="Đóng"/>
+                                    <Button Command="{Binding EditCommand}" Content="Lưu" Width="100" Margin="5,0" Style="{StaticResource ButtonPrimary}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </hc:Drawer>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <hc:SearchBar Width="300" Margin="10" ShowClearButton="True" hc:InfoElement.Placeholder="Tìm kiếm tên bệnh" 
+                              Text="{Binding Keyword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding SearchCommand}" Style="{StaticResource SearchBarPlus}"/>
+            </StackPanel>
+        </Grid>
+
+        <DataGrid Grid.Row="1" AutoGenerateColumns="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                              DataGrid.GridLinesVisibility="None" HeadersVisibility="Column" CanUserAddRows="False" SelectionMode="Single"
+                              IsReadOnly="True" Margin="10,0,10,10" ItemsSource="{Binding List}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mã đơn vị" Width="*" Binding="{Binding ID, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Tên đơn vị" Width="4*" Binding="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>
