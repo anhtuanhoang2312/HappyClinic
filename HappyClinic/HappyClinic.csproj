@@ -124,8 +124,14 @@
     <Compile Include="MedicineUnit.cs">
       <DependentUpon>ClinicModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="MedicineUnitWindow.xaml.cs">
+      <DependentUpon>MedicineUnitWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MedicineUsage.cs">
       <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MedicineUsageWindow.xaml.cs">
+      <DependentUpon>MedicineUsageWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\DataProvider.cs" />
     <Compile Include="Model\IDGenerator.cs" />
@@ -139,6 +145,8 @@
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\DiseaseViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\MedicineUnitViewModel.cs" />
+    <Compile Include="ViewModel\MedicineUsageViewModel.cs" />
     <Compile Include="ViewModel\PatientViewModel.cs" />
     <Page Include="DiseaseWindow.xaml">
       <SubType>Designer</SubType>
@@ -156,6 +164,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MedicineUnitWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MedicineUsageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PatientWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
