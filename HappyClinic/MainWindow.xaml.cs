@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HandyControl.Controls;
+using HappyClinic.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,11 +20,35 @@ namespace HappyClinic
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void sideMenu_Selected(object sender, RoutedEventArgs e)
+        {
+            var item = e.OriginalSource as SideMenuItem;
+            if (item != null)
+            {
+                if (item.Name == "Patients")
+                {
+                    ViewSelector.Select(MainContent, new PatientWindow());
+                }
+                else if (item.Name == "Diseases")
+                {
+                    ViewSelector.Select(MainContent, new DiseaseWindow());
+                }
+                else if (item.Name == "MedicineUsage")
+                {
+                    ViewSelector.Select(MainContent, new MedicineUsageWindow());
+                }
+                else if (item.Name == "MedicineUnit")
+                {
+                    ViewSelector.Select(MainContent, new MedicineUnitWindow());
+                }
+            }
         }
     }
 }

@@ -136,6 +136,7 @@
     <Compile Include="Model\DataProvider.cs" />
     <Compile Include="Model\IDGenerator.cs" />
     <Compile Include="Model\StringExtension.cs" />
+    <Compile Include="Model\ViewSelector.cs" />
     <Compile Include="Patient.cs">
       <DependentUpon>ClinicModel.tt</DependentUpon>
     </Compile>

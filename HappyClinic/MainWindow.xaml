@@ -14,7 +14,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <hc:SideMenu Name="SideMenu">
+        <hc:SideMenu Name="SideMenu" hc:SideMenuItem.Selected="sideMenu_Selected">
             <hc:SideMenuItem Name="Dashboard" Header="Tổng quan">
                 <hc:SideMenuItem.Icon>
                     <Image Source="/Icons/dashboard.png" Width="24" Height="24"/>
@@ -57,10 +57,6 @@
         </hc:SideMenu>
 
         <Grid Grid.Column="1" Name="MainContent" Background="#F5F7F9">
-            <!--<local:PatientWindow></local:PatientWindow>-->
-            <!--<local:DiseaseWindow></local:DiseaseWindow>-->
-            <local:MedicineUnitWindow></local:MedicineUnitWindow>
-            <!--<local:MedicineUsageWindow></local:MedicineUsageWindow>-->
         </Grid>
     </Grid>
 </Window>
