@@ -21,38 +21,38 @@
                 </hc:SideMenuItem.Icon>
             </hc:SideMenuItem>
 
-            <hc:SideMenuItem Name="Patients" Header="Danh sách bệnh nhân">
+            <hc:SideMenuItem Name="Patient" Header="Danh sách bệnh nhân">
                 <hc:SideMenuItem.Icon>
                     <Image Source="/Icons/patients.png" Width="24" Height="24"/>
                 </hc:SideMenuItem.Icon>
             </hc:SideMenuItem>
 
-            <hc:SideMenuItem Name="ExaminationForms" Header="Danh sách phiếu khám">
+            <hc:SideMenuItem Name="ExaminationForm" Header="Danh sách phiếu khám">
                 <hc:SideMenuItem.Icon>
                     <Image Source="/Icons/examinationforms.png" Width="24" Height="24"/>
                 </hc:SideMenuItem.Icon>
             </hc:SideMenuItem>
 
-            <hc:SideMenuItem Name="Invoices" Header="Danh sách hóa đơn">
+            <hc:SideMenuItem Name="Invoice" Header="Danh sách hóa đơn">
                 <hc:SideMenuItem.Icon>
                     <Image Source="/Icons/invoices.png" Width="24" Height="24"/>
                 </hc:SideMenuItem.Icon>
             </hc:SideMenuItem>
 
-            <hc:SideMenuItem Name="Medicines" Header="Danh sách thuốc">
+            <hc:SideMenuItem Name="Medicine" Header="Danh sách thuốc">
                 <hc:SideMenuItem.Icon>
                     <Image Source="/Icons/medicines.png" Width="24" Height="24"/>
                 </hc:SideMenuItem.Icon>
             </hc:SideMenuItem>
 
-            <hc:SideMenuItem Name="Settings" Header="Cấu hình">
+            <hc:SideMenuItem Name="Setting" Header="Cấu hình">
                 <hc:SideMenuItem.Icon>
                     <Image Source="/Icons/settings.png" Width="24" Height="24"/>
                 </hc:SideMenuItem.Icon>
                 <hc:SideMenuItem Name="MedicineUsage" Header="Cách dùng thuốc"/>
                 <hc:SideMenuItem Name="MedicineUnit" Header="Đơn vị thuốc"/>
-                <hc:SideMenuItem Name="Diseases" Header="Danh sách bệnh"/>
-                <hc:SideMenuItem Name="Accounts" Header="Tài khoản nhân viên"/>
+                <hc:SideMenuItem Name="Disease" Header="Danh sách bệnh"/>
+                <hc:SideMenuItem Name="Account" Header="Tài khoản nhân viên"/>
             </hc:SideMenuItem>
         </hc:SideMenu>
 

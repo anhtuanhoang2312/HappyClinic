@@ -32,11 +32,15 @@ namespace HappyClinic
             var item = e.OriginalSource as SideMenuItem;
             if (item != null)
             {
-                if (item.Name == "Patients")
+                if (item.Name == "Patient")
                 {
                     ViewSelector.Select(MainContent, new PatientWindow());
                 }
-                else if (item.Name == "Diseases")
+                else if (item.Name == "ExaminationForm")
+                {
+                    ViewSelector.Select(MainContent, new ExaminationFormWindow());
+                }
+                else if (item.Name == "Disease")
                 {
                     ViewSelector.Select(MainContent, new DiseaseWindow());
                 }

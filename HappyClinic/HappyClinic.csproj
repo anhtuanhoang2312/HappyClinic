@@ -115,6 +115,9 @@
     <Compile Include="ExaminationForm.cs">
       <DependentUpon>ClinicModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ExaminationFormWindow.xaml.cs">
+      <DependentUpon>ExaminationFormWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Invoice.cs">
       <DependentUpon>ClinicModel.tt</DependentUpon>
     </Compile>
@@ -148,12 +151,17 @@
     </Compile>
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\DiseaseViewModel.cs" />
+    <Compile Include="ViewModel\ExaminationFormViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\MedicineUnitViewModel.cs" />
     <Compile Include="ViewModel\MedicineUsageViewModel.cs" />
     <Compile Include="ViewModel\MedicineViewModel.cs" />
     <Compile Include="ViewModel\PatientViewModel.cs" />
     <Page Include="DiseaseWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExaminationFormWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
