@@ -133,6 +133,9 @@
     <Compile Include="MedicineUsageWindow.xaml.cs">
       <DependentUpon>MedicineUsageWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MedicineWindow.xaml.cs">
+      <DependentUpon>MedicineWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model\DataProvider.cs" />
     <Compile Include="Model\IDGenerator.cs" />
     <Compile Include="Model\StringExtension.cs" />
@@ -148,6 +151,7 @@
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\MedicineUnitViewModel.cs" />
     <Compile Include="ViewModel\MedicineUsageViewModel.cs" />
+    <Compile Include="ViewModel\MedicineViewModel.cs" />
     <Compile Include="ViewModel\PatientViewModel.cs" />
     <Page Include="DiseaseWindow.xaml">
       <SubType>Designer</SubType>
@@ -170,6 +174,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MedicineUsageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MedicineWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

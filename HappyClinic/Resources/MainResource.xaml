@@ -6,4 +6,5 @@
     <viewmodel:DiseaseViewModel x:Key="DiseaseVM"></viewmodel:DiseaseViewModel>
     <viewmodel:MedicineUnitViewModel x:Key="MedicineUnitVM"></viewmodel:MedicineUnitViewModel>
     <viewmodel:MedicineUsageViewModel x:Key="MedicineUsageVM"></viewmodel:MedicineUsageViewModel>
+    <viewmodel:MedicineViewModel x:Key="MedicineVM"></viewmodel:MedicineViewModel>
 </ResourceDictionary>
