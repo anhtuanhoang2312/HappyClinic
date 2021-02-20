@@ -9,11 +9,10 @@
 
 namespace HappyClinic
 {
-    using HappyClinic.ViewModel;
     using System;
     using System.Collections.Generic;
     
-    public partial class Patient : BaseViewModel
+    public partial class Patient
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Patient()
@@ -21,25 +20,14 @@ namespace HappyClinic
             this.ExaminationForms = new HashSet<ExaminationForm>();
             this.Invoices = new HashSet<Invoice>();
         }
-
-        private string _ID;
-        public string ID { get => _ID; set { _ID = value; OnPropertyChanged(); } }
-
-        private string _Name;
-        public string Name { get => _Name; set { _Name = value; OnPropertyChanged(); } }
-
-        private string _Sex;
-        public string Sex { get => _Sex; set { _Sex = value; OnPropertyChanged(); } }
-
-        private Nullable<System.DateTime> _Dob;
-        public Nullable<System.DateTime> Dob { get => _Dob; set { _Dob = value; OnPropertyChanged(); } }
-
-        private string _Adr;
-        public string Adr { get => _Adr; set { _Adr = value; OnPropertyChanged(); } }
-
-        private string _Phone;
-        public string Phone { get => _Phone; set { _Phone = value; OnPropertyChanged(); } }
-
+    
+        public string ID { get; set; }
+        public string Name { get; set; }
+        public string Sex { get; set; }
+        public Nullable<System.DateTime> Dob { get; set; }
+        public string Adr { get; set; }
+        public string Phone { get; set; }
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ExaminationForm> ExaminationForms { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

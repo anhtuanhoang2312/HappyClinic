@@ -46,19 +46,19 @@
                                 <hc:TextBox Text="{Binding Supplier}" Margin="20,5" VerticalContentAlignment="Center"
                 ShowClearButton="True" TextType="Common" hc:InfoElement.Placeholder="Nhập nhà cung cấp" hc:InfoElement.Title="Nhà cung cấp"/>
 
-                                <DockPanel>
+                                <StackPanel Orientation="Horizontal">
                                     <hc:DatePicker SelectedDate="{Binding MfgDate}" Margin="20,5,10,5" Width="130" VerticalContentAlignment="Center"
-                hc:InfoElement.Placeholder="Chọn ngày" hc:InfoElement.Title="NSX (MM/dd/yyyy)"/>
+                hc:InfoElement.Placeholder="Chọn ngày" hc:InfoElement.Title="NSX"/>
                                     <hc:DatePicker SelectedDate="{Binding ExpDate}" Margin="10,5,20,5" Width="130" VerticalContentAlignment="Center"
-                hc:InfoElement.Placeholder="Chọn ngày" hc:InfoElement.Title="HSD (MM/dd/yyyy)"/>
-                                </DockPanel>
+                hc:InfoElement.Placeholder="Chọn ngày" hc:InfoElement.Title="HSD"/>
+                                </StackPanel>
 
-                                <DockPanel>
-                                    <hc:TextBox Text="{Binding Qty}" Margin="20,5,10,5" Width="130" VerticalContentAlignment="Center"
-                ShowClearButton="True" TextType="Common" hc:InfoElement.Placeholder="Nhập số lượng" hc:InfoElement.Title="Số lượng"/>
-                                    <hc:TextBox Text="{Binding UnitID}" Margin="10,5,20,5" Width="130" DockPanel.Dock="Right" VerticalContentAlignment="Center"
-                ShowClearButton="True" TextType="Common" hc:InfoElement.Placeholder="Nhập đơn vị" hc:InfoElement.Title="Đơn vị tính"/>
-                                </DockPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <hc:NumericUpDown Value="{Binding Qty}" Minimum="0" Margin="20,5,10,5" Width="130" VerticalContentAlignment="Center"
+                ShowClearButton="True" hc:InfoElement.Placeholder="Nhập số lượng" hc:InfoElement.Title="Số lượng" Style="{StaticResource NumericUpDownExtend}"/>
+                                    <hc:ComboBox ItemsSource="{Binding AllUnits}" DisplayMemberPath="Name" SelectedValuePath="ID" SelectedValue="{Binding UnitID}" Width="130" Margin="10,5,20,5" 
+                Focusable="False" IsEditable="True" IsReadOnly="True" hc:InfoElement.Placeholder="Nhập đơn vị" hc:InfoElement.Title="Đơn vị tính" IsEnabled="True"/>
+                                </StackPanel>
                                 
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
                                     <Button Command="hc:ControlCommands.Close" Width="100" Margin="5,0" Content="Đóng"/>
@@ -89,6 +89,20 @@
                                 <hc:TextBox Text="{Binding Supplier}" Margin="20,5" VerticalContentAlignment="Center"
                 ShowClearButton="True" TextType="Common" hc:InfoElement.Placeholder="Nhập nhà cung cấp" hc:InfoElement.Title="Nhà cung cấp"/>
 
+                                <StackPanel Orientation="Horizontal">
+                                    <hc:DatePicker SelectedDate="{Binding MfgDate}" Margin="20,5,10,5" Width="130" VerticalContentAlignment="Center"
+                hc:InfoElement.Placeholder="Chọn ngày" hc:InfoElement.Title="NSX"/>
+                                    <hc:DatePicker SelectedDate="{Binding ExpDate}" Margin="10,5,20,5" Width="130" VerticalContentAlignment="Center"
+                hc:InfoElement.Placeholder="Chọn ngày" hc:InfoElement.Title="HSD"/>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal">
+                                    <hc:NumericUpDown Value="{Binding Qty}" Minimum="0" Margin="20,5,10,5" Width="130" VerticalContentAlignment="Center"
+                ShowClearButton="True" hc:InfoElement.Placeholder="Nhập số lượng" hc:InfoElement.Title="Số lượng" Style="{StaticResource NumericUpDownExtend}"/>
+                                    <hc:ComboBox ItemsSource="{Binding AllUnits}" DisplayMemberPath="Name" SelectedValuePath="Name" SelectedValue="{Binding UnitID}" Width="130" Margin="10,5,20,5" 
+                Focusable="False" IsEditable="True" IsReadOnly="True" hc:InfoElement.Placeholder="Nhập đơn vị" hc:InfoElement.Title="Đơn vị tính" IsEnabled="True"/>
+                                </StackPanel>
+
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
                                     <Button Command="hc:ControlCommands.Close" Width="100" Margin="5,0" Content="Đóng"/>
                                     <Button Command="{Binding EditCommand}" Content="Lưu" Width="100" Margin="5,0" Style="{StaticResource ButtonPrimary}"/>
@@ -99,7 +113,7 @@
                 </hc:Drawer>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <hc:SearchBar Width="300" Margin="10" ShowClearButton="True" hc:InfoElement.Placeholder="Tìm kiếm tên bệnh" 
+                <hc:SearchBar Width="300" Margin="10" ShowClearButton="True" hc:InfoElement.Placeholder="Nhập tên thuốc hoặc mã thuốc" 
                               Text="{Binding Keyword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding SearchCommand}" Style="{StaticResource SearchBarPlus}"/>
             </StackPanel>
         </Grid>
@@ -110,12 +124,11 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Mã thuốc" Width="1.25*" Binding="{Binding ID, UpdateSourceTrigger=PropertyChanged}"/>
                 <DataGridTextColumn Header="Tên thuốc" Width="3*" Binding="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
-                <DataGridTextColumn Header="Đơn giá" Width="1.25*" Binding="{Binding Price, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Đơn giá" Width="1.5*" Binding="{Binding Price, StringFormat={}{0:N0}, UpdateSourceTrigger=PropertyChanged}"/>
                 <DataGridTextColumn Header="Nhà cung cấp" Width="2*" Binding="{Binding Supplier, UpdateSourceTrigger=PropertyChanged}"/>
-                <DataGridTextColumn Header="NSX" Width="1.5*" Binding="{Binding MfgDate, UpdateSourceTrigger=PropertyChanged}"/>
-                <DataGridTextColumn Header="HSD" Width="1.5*" Binding="{Binding ExpDate, UpdateSourceTrigger=PropertyChanged}"/>
-                <DataGridTextColumn Header="Số lượng" Width="1.25*" Binding="{Binding Qty, UpdateSourceTrigger=PropertyChanged}"/>
-                <DataGridTextColumn Header="Đơn vị tính" Width="1.5*" Binding="{Binding UnitID, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="NSX" Width="1.5*" Binding="{Binding MfgDate, StringFormat='dd/MM/yyyy', UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="HSD" Width="1.5*" Binding="{Binding ExpDate, StringFormat='dd/MM/yyyy', UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Số lượng" Width="1.25*" Binding="{Binding Qty, StringFormat={}{0:N0}, UpdateSourceTrigger=PropertyChanged}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

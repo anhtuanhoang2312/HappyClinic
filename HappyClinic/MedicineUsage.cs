@@ -17,7 +17,7 @@ namespace HappyClinic
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public MedicineUsage()
         {
-            this.ExaminationDetails = new HashSet<ExaminationDetail>();
+            this.MedicineDetails = new HashSet<MedicineDetail>();
         }
     
         public string ID { get; set; }
@@ -25,6 +25,6 @@ namespace HappyClinic
         public string LongDsc { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ExaminationDetail> ExaminationDetails { get; set; }
+        public virtual ICollection<MedicineDetail> MedicineDetails { get; set; }
     }
 }

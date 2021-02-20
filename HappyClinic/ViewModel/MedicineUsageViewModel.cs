@@ -145,8 +145,8 @@ namespace HappyClinic.ViewModel
                 }
                 else
                 {
-                    var result = from mu in DataProvider.Instance.DB.MedicineUsages
-                                 where mu.ShortDsc.Contains(Keyword) || mu.LongDsc.Contains(Keyword)
+                    var result = from mu in DataProvider.Instance.DB.MedicineUsages.ToList()
+                                 where mu.ShortDsc.ToLower().AccentRemoved().Contains(Keyword.ToLower().AccentRemoved()) || mu.LongDsc.ToLower().AccentRemoved().Contains(Keyword.ToLower().AccentRemoved())
                                  select mu;
 
                     List = new ObservableCollection<MedicineUsage>(result);

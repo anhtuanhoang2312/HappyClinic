@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace HappyClinic.ViewModel
@@ -26,6 +27,12 @@ namespace HappyClinic.ViewModel
                 {
                     ID = SelectedItem.ID;
                     Name = SelectedItem.Name;
+                    Price = SelectedItem.Price;
+                    Qty = SelectedItem.Qty;
+                    Supplier = SelectedItem.Supplier;
+                    MfgDate = SelectedItem.MfgDate;
+                    ExpDate = SelectedItem.ExpDate;
+                    UnitID = DataProvider.Instance.DB.MedicineUnits.Where(x => x.ID == SelectedItem.UnitID).Single().Name;
                 }
             }
         }
@@ -65,6 +72,9 @@ namespace HappyClinic.ViewModel
         private string _UnitID = string.Empty;
         public string UnitID { get => _UnitID; set { _UnitID = value; OnPropertyChanged(); } }
 
+        private ObservableCollection<MedicineUnit> _AllUnits;
+        public ObservableCollection<MedicineUnit> AllUnits { get => _AllUnits; set { _AllUnits = value; OnPropertyChanged(); } }
+
         public ICommand ClearCommand { get; set; }
         public ICommand CheckCommand { get; set; }
 
@@ -88,6 +98,7 @@ namespace HappyClinic.ViewModel
         public MedicineViewModel()
         {
             List = new ObservableCollection<Medicine>(DataProvider.Instance.DB.Medicines);
+            AllUnits = new ObservableCollection<MedicineUnit>(DataProvider.Instance.DB.MedicineUnits);
 
             ClearCommand = new RelayCommand<object>((p) =>
             {
@@ -138,10 +149,6 @@ namespace HappyClinic.ViewModel
                     || string.IsNullOrEmpty(ExpDate.ToString()) || MfgDate > ExpDate || string.IsNullOrEmpty(Qty.ToString()) || string.IsNullOrEmpty(UnitID))
                     return false;
 
-                var isExisted = DataProvider.Instance.DB.Medicines.Where(x => x.ID == ID);
-                if (isExisted.Count() == 0)
-                    return false;
-
                 return true;
 
             }, (p) =>
@@ -153,7 +160,7 @@ namespace HappyClinic.ViewModel
                 Medicine.MfgDate = MfgDate;
                 Medicine.ExpDate = ExpDate;
                 Medicine.Qty = Qty;
-                Medicine.UnitID = UnitID;
+                Medicine.UnitID = DataProvider.Instance.DB.MedicineUnits.Where(x => x.Name == UnitID).Single().ID;
 
                 DataProvider.Instance.DB.SaveChanges();
 
@@ -171,8 +178,8 @@ namespace HappyClinic.ViewModel
                 }
                 else
                 {
-                    var result = from m in DataProvider.Instance.DB.Medicines
-                                 where m.Name.Contains(Keyword)
+                    var result = from m in DataProvider.Instance.DB.Medicines.ToList()
+                                 where (m.Name.ToLower().AccentRemoved().Contains(Keyword.ToLower().AccentRemoved()) || m.ID.ToLower().AccentRemoved().Contains(Keyword.ToLower().AccentRemoved()))
                                  select m;
 
                     List = new ObservableCollection<Medicine>(result);

@@ -106,11 +106,11 @@
     <Compile Include="Disease.cs">
       <DependentUpon>ClinicModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DiseaseDetail.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DiseaseWindow.xaml.cs">
       <DependentUpon>DiseaseWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ExaminationDetail.cs">
-      <DependentUpon>ClinicModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ExaminationForm.cs">
       <DependentUpon>ClinicModel.tt</DependentUpon>
@@ -122,6 +122,9 @@
       <DependentUpon>ClinicModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Medicine.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MedicineDetail.cs">
       <DependentUpon>ClinicModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MedicineUnit.cs">

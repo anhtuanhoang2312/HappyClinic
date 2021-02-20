@@ -77,8 +77,8 @@
                 </hc:Drawer>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <hc:SearchBar Width="300" Margin="10" ShowClearButton="True" hc:InfoElement.Placeholder="Tìm kiếm tên bệnh" 
-                              Text="{Binding Keyword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding SearchCommand}" Style="{StaticResource SearchBarPlus}"/>
+                <hc:SearchBar Width="300" Margin="10" ShowClearButton="True" hc:InfoElement.Placeholder="Nhập mô tả hoặc cách dùng"
+                Text="{Binding Keyword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding SearchCommand}" Style="{StaticResource SearchBarPlus}"/>
             </StackPanel>
         </Grid>
 

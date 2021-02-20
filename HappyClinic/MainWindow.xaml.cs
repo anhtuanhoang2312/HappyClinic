@@ -40,9 +40,9 @@ namespace HappyClinic
                 {
                     ViewSelector.Select(MainContent, new ExaminationFormWindow());
                 }
-                else if (item.Name == "Disease")
+                else if (item.Name == "Medicine")
                 {
-                    ViewSelector.Select(MainContent, new DiseaseWindow());
+                    ViewSelector.Select(MainContent, new MedicineWindow());
                 }
                 else if (item.Name == "MedicineUsage")
                 {
@@ -51,6 +51,10 @@ namespace HappyClinic
                 else if (item.Name == "MedicineUnit")
                 {
                     ViewSelector.Select(MainContent, new MedicineUnitWindow());
+                }
+                else if (item.Name == "Disease")
+                {
+                    ViewSelector.Select(MainContent, new DiseaseWindow());
                 }
             }
         }
