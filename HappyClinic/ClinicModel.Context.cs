@@ -27,10 +27,11 @@ namespace HappyClinic
     
         public virtual DbSet<Account> Accounts { get; set; }
         public virtual DbSet<Disease> Diseases { get; set; }
-        public virtual DbSet<ExaminationDetail> ExaminationDetails { get; set; }
+        public virtual DbSet<DiseaseDetail> DiseaseDetails { get; set; }
         public virtual DbSet<ExaminationForm> ExaminationForms { get; set; }
         public virtual DbSet<Invoice> Invoices { get; set; }
         public virtual DbSet<Medicine> Medicines { get; set; }
+        public virtual DbSet<MedicineDetail> MedicineDetails { get; set; }
         public virtual DbSet<MedicineUnit> MedicineUnits { get; set; }
         public virtual DbSet<MedicineUsage> MedicineUsages { get; set; }
         public virtual DbSet<Patient> Patients { get; set; }
