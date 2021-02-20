@@ -145,8 +145,8 @@ namespace HappyClinic.ViewModel
                 }
                 else
                 {
-                    var result = from d in DataProvider.Instance.DB.Diseases
-                                 where d.Name.Contains(Keyword)
+                    var result = from d in DataProvider.Instance.DB.Diseases.ToList()
+                                 where d.Name.ToLower().AccentRemoved().Contains(Keyword.ToLower().AccentRemoved())
                                  select d;
 
                     List = new ObservableCollection<Disease>(result);

@@ -14,8 +14,8 @@ namespace HappyClinic.ViewModel
         private ObservableCollection<MedicineUnit> _List;
         public ObservableCollection<MedicineUnit> List { get => _List; set { _List = value; OnPropertyChanged(); } }
 
-        private Disease _SelectedItem;
-        public Disease SelectedItem
+        private MedicineUnit _SelectedItem;
+        public MedicineUnit SelectedItem
         {
             get => _SelectedItem;
             set
@@ -139,8 +139,8 @@ namespace HappyClinic.ViewModel
                 }
                 else
                 {
-                    var result = from mu in DataProvider.Instance.DB.MedicineUnits
-                                 where mu.Name.Contains(Keyword)
+                    var result = from mu in DataProvider.Instance.DB.MedicineUnits.ToList()
+                                 where mu.Name.ToLower().AccentRemoved().Contains(Keyword.ToLower().AccentRemoved())
                                  select mu;
 
                     List = new ObservableCollection<MedicineUnit>(result);

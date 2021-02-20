@@ -17,7 +17,7 @@ namespace HappyClinic
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Disease()
         {
-            this.ExaminationForms = new HashSet<ExaminationForm>();
+            this.DiseaseDetails = new HashSet<DiseaseDetail>();
         }
     
         public string ID { get; set; }
@@ -25,6 +25,6 @@ namespace HappyClinic
         public Nullable<int> Price { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ExaminationForm> ExaminationForms { get; set; }
+        public virtual ICollection<DiseaseDetail> DiseaseDetails { get; set; }
     }
 }
