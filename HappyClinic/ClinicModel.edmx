@@ -49,6 +49,7 @@
           <Property Name="PatientID" Type="varchar" MaxLength="10" />
           <Property Name="Account" Type="nvarchar" MaxLength="30" />
           <Property Name="ExamID" Type="varchar" MaxLength="10" />
+          <Property Name="Status" Type="nvarchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="Medicine">
           <Key>
@@ -331,6 +332,7 @@
           <NavigationProperty Name="Account1" Relationship="Self.FK_I_A" FromRole="Invoice" ToRole="Account" />
           <NavigationProperty Name="ExaminationForm" Relationship="Self.FK_I_EF" FromRole="Invoice" ToRole="ExaminationForm" />
           <NavigationProperty Name="Patient" Relationship="Self.FK_I_P" FromRole="Invoice" ToRole="Patient" />
+          <Property Name="Status" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Medicine">
           <Key>
@@ -609,6 +611,7 @@
           <EntitySetMapping Name="Invoices">
             <EntityTypeMapping TypeName="ClinicModel.Invoice">
               <MappingFragment StoreEntitySet="Invoice">
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="IDdate" ColumnName="IDdate" />
                 <ScalarProperty Name="Total" ColumnName="Total" />
