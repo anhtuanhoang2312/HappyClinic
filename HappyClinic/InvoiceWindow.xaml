@@ -1,0 +1,153 @@
+﻿<UserControl x:Class="HappyClinic.InvoiceWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HappyClinic"
+             mc:Ignorable="d" 
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             d:DesignHeight="650" d:DesignWidth="960"
+             DataContext="{StaticResource InvoiceVM}">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/MainResource.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10">
+                <ToggleButton Width="100" HorizontalAlignment="Stretch" Content="Chỉnh sửa" IsChecked="{Binding IsOpen,ElementName=EditDrawer}" Command="{Binding CheckCommand}"/>
+                <hc:Drawer Name="EditDrawer" MaskCanClose="False">
+                    <hc:ScrollViewer IsInertiaEnabled="True">
+                        <Border Background="{DynamicResource RegionBrush}" Width="560" BorderThickness="0,1,0,0" BorderBrush="{DynamicResource BorderBrush}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Margin="20,20,0,10" Text="Sửa trạng thái hóa đơn" Style="{StaticResource TextBlockTitleBold}" HorizontalAlignment="Left"/>
+                                <StackPanel Grid.Row="1">
+                                    <StackPanel Margin="20,5" Orientation="Horizontal">
+                                        <hc:TextBox Text="{Binding ID}" Margin="0,0,10,0" Width="160" VerticalContentAlignment="Center"
+                TextType="Common" hc:InfoElement.Title="Mã hóa đơn" IsEnabled="False"/>
+                                        <hc:DatePicker SelectedDate="{Binding IDate}" Width="160" Margin="10,0" VerticalContentAlignment="Center" IsEnabled="False"
+                hc:InfoElement.Title="Ngày lập"/>
+                                        <hc:TextBox Text="{Binding Account}" Margin="10,0,0,0" Width="160" VerticalContentAlignment="Center"
+                TextType="Common" hc:InfoElement.Title="Người lập" IsEnabled="False"/>
+                                    </StackPanel>
+
+                                    <StackPanel Margin="20,5,20,20" Orientation="Horizontal">
+                                        <hc:TextBox Text="{Binding ExamID}" Width="250" VerticalContentAlignment="Center" IsEnabled="False" TextType="Common" hc:InfoElement.Title="Mã phiếu khám"/>
+                                        <hc:ComboBox SelectedIndex="{Binding Status}" Focusable="False" Width="250" Margin="20,0,0,0" IsEditable="True" IsReadOnly="True" hc:InfoElement.Placeholder="Chọn trạng thái" hc:InfoElement.Title="Trạng thái thanh toán">
+                                            <ComboBoxItem>Đã thanh toán</ComboBoxItem>
+                                            <ComboBoxItem>Chưa thanh toán</ComboBoxItem>
+                                        </hc:ComboBox>
+                                    </StackPanel>
+
+                                    <hc:Divider Margin="0,5"/>
+
+                                    <StackPanel Margin="4,10,0,10">
+                                        <StackPanel Margin="20,5" Orientation="Horizontal">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock HorizontalAlignment="Left" Margin="5,0" Text="Bệnh nhân:" Style="{StaticResource TextBlockDefault}"/>
+                                                <TextBlock HorizontalAlignment="Left" Text="{Binding PatientInfo.Name}" Style="{StaticResource TextBlockDefaultBold}"/>
+                                            </StackPanel>
+                                        </StackPanel>
+
+                                        <StackPanel Margin="20,5" Orientation="Horizontal">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock HorizontalAlignment="Left" Margin="5,0" Text="Ngày sinh:" Style="{StaticResource TextBlockDefault}"/>
+                                                <TextBlock HorizontalAlignment="Left" Text="{Binding PatientInfo.Dob, StringFormat='dd/MM/yyyy'}" Style="{StaticResource TextBlockDefaultBold}"/>
+                                            </StackPanel>
+                                            <StackPanel Margin="30,0" Orientation="Horizontal">
+                                                <TextBlock HorizontalAlignment="Left" Margin="5,0" Text="Giới tính:" Style="{StaticResource TextBlockDefault}"/>
+                                                <TextBlock HorizontalAlignment="Left" Text="{Binding PatientInfo.Sex}" Style="{StaticResource TextBlockDefaultBold}"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock HorizontalAlignment="Left" Margin="5,0" Text="Điện thoại:" Style="{StaticResource TextBlockDefault}"/>
+                                                <TextBlock HorizontalAlignment="Left" Text="{Binding PatientInfo.Phone}" Style="{StaticResource TextBlockDefaultBold}"/>
+                                            </StackPanel>
+                                        </StackPanel>
+
+                                        <StackPanel Margin="20,5" Orientation="Horizontal">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock HorizontalAlignment="Left" Margin="5,0" Text="Địa chỉ:" Style="{StaticResource TextBlockDefault}"/>
+                                                <TextBlock HorizontalAlignment="Left" Text="{Binding PatientInfo.Adr}" Style="{StaticResource TextBlockDefaultBold}"/>
+                                            </StackPanel>
+                                        </StackPanel>
+
+                                        <StackPanel Margin="20,5" Orientation="Horizontal">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock HorizontalAlignment="Left" Margin="5,0" Text="Triệu chứng:" Style="{StaticResource TextBlockDefault}"/>
+                                                <TextBlock HorizontalAlignment="Left" Text="{Binding ExamInfo.Symptom}" Style="{StaticResource TextBlockDefaultBold}"/>
+                                            </StackPanel>
+                                        </StackPanel>
+
+                                        <DataGrid Name="diseaseDataGrid" AutoGenerateColumns="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                              DataGrid.GridLinesVisibility="None" HeadersVisibility="Column" CanUserAddRows="False" SelectionMode="Single"
+                              IsReadOnly="True" Margin="20,20,20,10" ItemsSource="{Binding AllDiseases}">
+                                            <DataGrid.Columns>
+                                                <DataGridTextColumn Header="Dịch vụ khám chữa bệnh" Width="1.5*" Binding="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
+                                                <DataGridTextColumn Header="SL" Width="0.5*" Binding="{Binding Qty, UpdateSourceTrigger=PropertyChanged}"/>
+                                                <DataGridTextColumn Header="Đơn giá" Width="*" Binding="{Binding Price, StringFormat={}{0:N0}, UpdateSourceTrigger=PropertyChanged}"/>
+                                                <DataGridTextColumn Header="Thành tiền" Width="*" Binding="{Binding Total, StringFormat={}{0:N0}, UpdateSourceTrigger=PropertyChanged}"/>
+                                            </DataGrid.Columns>
+                                        </DataGrid>
+
+                                    <DataGrid Name="medicineDataGrid" AutoGenerateColumns="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                              DataGrid.GridLinesVisibility="None" HeadersVisibility="Column" CanUserAddRows="False" SelectionMode="Single"
+                              IsReadOnly="True" Margin="20,5" ItemsSource="{Binding AllMedicines}">
+                                            <DataGrid.Columns>
+                                                <DataGridTextColumn Header="Tên thuốc, vật tư" Width="1.5*" Binding="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
+                                                <DataGridTextColumn Header="SL" Width="0.5*" Binding="{Binding Qty, UpdateSourceTrigger=PropertyChanged}"/>
+                                                <DataGridTextColumn Header="Đơn giá" Width="*" Binding="{Binding Price, StringFormat={}{0:N0}, UpdateSourceTrigger=PropertyChanged}"/>
+                                                <DataGridTextColumn Header="Thành tiền" Width="*" Binding="{Binding Total, StringFormat={}{0:N0}, UpdateSourceTrigger=PropertyChanged}"/>
+                                            </DataGrid.Columns>
+                                        </DataGrid>
+
+                                        <StackPanel Margin="20,5" Orientation="Horizontal" HorizontalAlignment="Right">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock HorizontalAlignment="Left" Text="Tổng cộng:" Style="{StaticResource TextBlockDefault}"/>
+                                                <TextBlock HorizontalAlignment="Left" Margin="5,0" Text="{Binding Total, StringFormat={}{0:N0}}" Style="{StaticResource TextBlockTitleBold}"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,30">
+                                        <Button Command="hc:ControlCommands.Close" Width="100" Margin="5,0" Content="Đóng"/>
+                                        <Button Command="{Binding EditCommand}" Content="Lưu" Width="100" Margin="5,0" Style="{StaticResource ButtonPrimary}"/>
+                                    </StackPanel>
+
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </hc:ScrollViewer>
+                </hc:Drawer>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <hc:SearchBar Width="300" Margin="10" ShowClearButton="True" hc:InfoElement.Placeholder="Nhập tên bệnh nhân, SĐT hoặc mã hóa đơn" 
+                              Text="{Binding Keyword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding SearchCommand}" Style="{StaticResource SearchBarPlus}"/>
+            </StackPanel>
+        </Grid>
+
+        <DataGrid Name="examDataGrid" Grid.Row="1" AutoGenerateColumns="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                              DataGrid.GridLinesVisibility="None" HeadersVisibility="Column" CanUserAddRows="False" SelectionMode="Single"
+                              IsReadOnly="True" Margin="10,0,10,10" ItemsSource="{Binding List}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mã HĐ" Width="*" Binding="{Binding ID, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Ngày lập" Width="*" Binding="{Binding IDdate, StringFormat='dd/MM/yyyy', UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Thành tiền" Width="*" Binding="{Binding Total, StringFormat={}{0:N0}, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Người lập" Width="*" Binding="{Binding Account, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Trạng thái" Width="3*" Binding="{Binding Status, UpdateSourceTrigger=PropertyChanged}"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

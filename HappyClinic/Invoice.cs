@@ -20,6 +20,7 @@ namespace HappyClinic
         public string PatientID { get; set; }
         public string Account { get; set; }
         public string ExamID { get; set; }
+        public string Status { get; set; }
     
         public virtual Account Account1 { get; set; }
         public virtual ExaminationForm ExaminationForm { get; set; }

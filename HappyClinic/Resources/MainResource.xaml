@@ -4,6 +4,7 @@
     <viewmodel:MainViewModel x:Key="MainVM"></viewmodel:MainViewModel>
     <viewmodel:PatientViewModel x:Key="PatientVM"></viewmodel:PatientViewModel>
     <viewmodel:ExaminationFormViewModel x:Key="ExaminationFormVM"></viewmodel:ExaminationFormViewModel>
+    <viewmodel:InvoiceViewModel x:Key="InvoiceVM"></viewmodel:InvoiceViewModel>
     <viewmodel:MedicineViewModel x:Key="MedicineVM"></viewmodel:MedicineViewModel>
     <viewmodel:MedicineUnitViewModel x:Key="MedicineUnitVM"></viewmodel:MedicineUnitViewModel>
     <viewmodel:MedicineUsageViewModel x:Key="MedicineUsageVM"></viewmodel:MedicineUsageViewModel>
