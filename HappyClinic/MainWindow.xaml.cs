@@ -40,6 +40,10 @@ namespace HappyClinic
                 {
                     ViewSelector.Select(MainContent, new ExaminationFormWindow());
                 }
+                else if (item.Name == "Invoice")
+                {
+                    ViewSelector.Select(MainContent, new InvoiceWindow());
+                }
                 else if (item.Name == "Medicine")
                 {
                     ViewSelector.Select(MainContent, new MedicineWindow());
