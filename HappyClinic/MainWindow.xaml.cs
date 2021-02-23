@@ -60,6 +60,10 @@ namespace HappyClinic
                 {
                     ViewSelector.Select(MainContent, new DiseaseWindow());
                 }
+                else if (item.Name == "Account")
+                {
+                    ViewSelector.Select(MainContent, new AccountWindow());
+                }
             }
         }
     }
