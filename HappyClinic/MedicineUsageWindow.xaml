@@ -87,8 +87,8 @@
                               IsReadOnly="True" Margin="10,0,10,10" ItemsSource="{Binding List}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Mã cách dùng" Width="*" Binding="{Binding ID, UpdateSourceTrigger=PropertyChanged}"/>
-                <DataGridTextColumn Header="Mô tả" Width="2*" Binding="{Binding ShortDsc, UpdateSourceTrigger=PropertyChanged}"/>
-                <DataGridTextColumn Header="Cách dùng chi tiết" Width="4*" Binding="{Binding LongDsc, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Mô tả" Width="1.5*" Binding="{Binding ShortDsc, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Cách dùng chi tiết" Width="4.5*" Binding="{Binding LongDsc, UpdateSourceTrigger=PropertyChanged}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

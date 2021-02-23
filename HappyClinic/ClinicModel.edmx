@@ -10,8 +10,9 @@
             <PropertyRef Name="Username" />
           </Key>
           <Property Name="Username" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="Pwd" Type="nvarchar" MaxLength="10" />
+          <Property Name="Pass" Type="nvarchar" MaxLength="10" />
           <Property Name="isAdmin" Type="bit" />
+          <Property Name="Status" Type="nvarchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="Disease">
           <Key>
@@ -282,9 +283,10 @@
             <PropertyRef Name="Username" />
           </Key>
           <Property Name="Username" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Pwd" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="isAdmin" Type="Boolean" />
           <NavigationProperty Name="Invoices" Relationship="Self.FK_I_A" FromRole="Account" ToRole="Invoice" />
+          <Property Name="Pass" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Disease">
           <Key>
@@ -574,8 +576,9 @@
           <EntitySetMapping Name="Accounts">
             <EntityTypeMapping TypeName="ClinicModel.Account">
               <MappingFragment StoreEntitySet="Account">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Pass" ColumnName="Pass" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
-                <ScalarProperty Name="Pwd" ColumnName="Pwd" />
                 <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />
               </MappingFragment>
             </EntityTypeMapping>

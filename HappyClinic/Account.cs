@@ -21,8 +21,9 @@ namespace HappyClinic
         }
     
         public string Username { get; set; }
-        public string Pwd { get; set; }
         public Nullable<bool> isAdmin { get; set; }
+        public string Pass { get; set; }
+        public string Status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Invoice> Invoices { get; set; }
