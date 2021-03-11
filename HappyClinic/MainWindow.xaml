@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HappyClinic"
         xmlns:hc="https://handyorg.github.io/handycontrol"
-        mc:Ignorable="d" Title=" HappyClinic" Height="650" Width="1200" Icon="/Icons/app.png"
+        mc:Ignorable="d" Height="650" Width="1200" Icon="/Icons/app.png"
         RenderOptions.BitmapScalingMode="HighQuality"
         WindowStartupLocation="CenterScreen">
     <Grid>
@@ -15,11 +15,11 @@
         </Grid.ColumnDefinitions>
 
         <hc:SideMenu Name="SideMenu" hc:SideMenuItem.Selected="sideMenu_Selected">
-            <hc:SideMenuItem Name="Dashboard" Header="Tổng quan">
+            <!--<hc:SideMenuItem Name="Dashboard" Header="Tổng quan">
                 <hc:SideMenuItem.Icon>
                     <Image Source="/Icons/dashboard.png" Width="24" Height="24"/>
                 </hc:SideMenuItem.Icon>
-            </hc:SideMenuItem>
+            </hc:SideMenuItem>-->
 
             <hc:SideMenuItem Name="Patient" Header="Danh sách bệnh nhân">
                 <hc:SideMenuItem.Icon>
@@ -53,6 +53,12 @@
                 <hc:SideMenuItem Name="MedicineUnit" Header="Đơn vị thuốc"/>
                 <hc:SideMenuItem Name="Disease" Header="Danh sách bệnh"/>
                 <hc:SideMenuItem Name="Account" Header="Tài khoản nhân viên"/>
+            </hc:SideMenuItem>
+
+            <hc:SideMenuItem Name="LogOut" Header="Đăng xuất">
+                <hc:SideMenuItem.Icon>
+                    <Image Source="/Icons/logout.png" Width="24" Height="24"/>
+                </hc:SideMenuItem.Icon>
             </hc:SideMenuItem>
         </hc:SideMenu>
 

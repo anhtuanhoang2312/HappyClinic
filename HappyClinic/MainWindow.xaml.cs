@@ -14,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPFCustomMessageBox;
+
 
 namespace HappyClinic
 {
@@ -25,6 +27,15 @@ namespace HappyClinic
         public MainWindow()
         {
             InitializeComponent();
+            this.Title = $" HappyClinic (Bạn đang đăng nhập với tư cách {CurrentUser.Instance.User.Username.ToUpper()})";
+            if (CurrentUser.Instance.User.isAdmin == true)
+            {
+                Setting.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Setting.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void sideMenu_Selected(object sender, RoutedEventArgs e)
@@ -63,6 +74,16 @@ namespace HappyClinic
                 else if (item.Name == "Account")
                 {
                     ViewSelector.Select(MainContent, new AccountWindow());
+                }
+                else if (item.Name == "LogOut")
+                {
+                    MessageBoxResult result = System.Windows.MessageBox.Show("Bạn có chắc muốn đăng xuất?", "Xác nhận", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        LogInWindow login = new LogInWindow();
+                        login.Show();
+                        this.Close();                      
+                    }
                 }
             }
         }

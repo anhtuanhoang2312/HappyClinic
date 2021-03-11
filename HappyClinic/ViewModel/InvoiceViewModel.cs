@@ -133,6 +133,7 @@ namespace HappyClinic.ViewModel
 
         public InvoiceViewModel()
         {
+            DataProvider.Instance.DB.SaveChanges();
             List = new ObservableCollection<Invoice>(DataProvider.Instance.DB.Invoices);
             PatientInfo = new Patient();
             ExamInfo = new ExaminationForm();

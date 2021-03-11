@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:viewmodel="clr-namespace:HappyClinic.ViewModel">
+    <viewmodel:LogInViewModel x:Key="LogInVM"></viewmodel:LogInViewModel>
     <viewmodel:MainViewModel x:Key="MainVM"></viewmodel:MainViewModel>
     <viewmodel:PatientViewModel x:Key="PatientVM"></viewmodel:PatientViewModel>
     <viewmodel:ExaminationFormViewModel x:Key="ExaminationFormVM"></viewmodel:ExaminationFormViewModel>
