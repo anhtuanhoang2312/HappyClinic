@@ -13,5 +13,18 @@ namespace HappyClinic
     /// </summary>
     public partial class App : Application
     {
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
+            //if (true)
+            //{
+            //    MainWindow mainWindow = new MainWindow();
+            //    mainWindow.Show();
+            //}
+            //else
+            //{
+                LogInWindow login = new LogInWindow();
+                login.Show();
+            //}
+        }
     }
 }

@@ -60,7 +60,7 @@
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="HandyControl, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\HandyControls.3.0.0\lib\net47\HandyControl.dll</HintPath>
+      <HintPath>..\packages\HandyControl.3.0.0\lib\net47\HandyControl.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -81,6 +81,9 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WPFCustomMessageBox, Version=1.0.7.39267, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WPFCustomMessageBox.1.0.7\lib\WPFCustomMessageBox.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -129,6 +132,9 @@
     <Compile Include="InvoiceWindow.xaml.cs">
       <DependentUpon>InvoiceWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LogInWindow.xaml.cs">
+      <DependentUpon>LogInWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Medicine.cs">
       <DependentUpon>ClinicModel.tt</DependentUpon>
     </Compile>
@@ -150,6 +156,7 @@
     <Compile Include="MedicineWindow.xaml.cs">
       <DependentUpon>MedicineWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\CurrentUser.cs" />
     <Compile Include="Model\DataProvider.cs" />
     <Compile Include="Model\IDGenerator.cs" />
     <Compile Include="Model\StringExtension.cs" />
@@ -165,6 +172,7 @@
     <Compile Include="ViewModel\DiseaseViewModel.cs" />
     <Compile Include="ViewModel\ExaminationFormViewModel.cs" />
     <Compile Include="ViewModel\InvoiceViewModel.cs" />
+    <Compile Include="ViewModel\LogInViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\MedicineUnitViewModel.cs" />
     <Compile Include="ViewModel\MedicineUsageViewModel.cs" />
@@ -183,6 +191,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="InvoiceWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LogInWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -296,6 +308,7 @@
       <DependentUpon>ClinicModel.edmx</DependentUpon>
       <LastGenOutput>ClinicModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Icons\logout.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
