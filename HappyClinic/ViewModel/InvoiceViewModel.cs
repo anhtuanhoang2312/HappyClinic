@@ -34,6 +34,17 @@ namespace HappyClinic.ViewModel
                     Status = (SelectedItem.Status == "Đã thanh toán" ? "0" : "1");
                     PatientInfo = DataProvider.Instance.DB.Patients.Where(x => x.ID == SelectedItem.PatientID).Single();
                     ExamInfo = DataProvider.Instance.DB.ExaminationForms.Where(x => x.ID == SelectedItem.ExamID).Single();
+
+                    var PatientDiseases = DataProvider.Instance.DB.DiseaseDetails.Where(x => x.ExamID == ExamInfo.ID);
+                    DiagnosisInfo = DataProvider.Instance.DB.Diseases.Where(x => x.ID == PatientDiseases.FirstOrDefault().DiseaseID).Single().Name;
+                    foreach (var item in PatientDiseases)
+                    {
+                        var temp = DataProvider.Instance.DB.Diseases.Where(x => x.ID == item.DiseaseID).Single().Name;
+                        if (DiagnosisInfo != temp)
+                        {
+                            DiagnosisInfo += $", {temp.ToLower()}";
+                        }
+                    }
                     AllDiseases.Clear();
                     AllMedicines.Clear();
 
@@ -106,6 +117,9 @@ namespace HappyClinic.ViewModel
         private Patient _PatientInfo;
         public Patient PatientInfo { get => _PatientInfo; set { _PatientInfo = value; OnPropertyChanged(); } }
 
+        private string _DiagnosisInfo = string.Empty;
+        public string DiagnosisInfo { get => _DiagnosisInfo; set { _DiagnosisInfo = value; OnPropertyChanged(); } }
+
         private ExaminationForm _ExamInfo;
         public ExaminationForm ExamInfo { get => _ExamInfo; set { _ExamInfo = value; OnPropertyChanged(); } }
 
@@ -133,7 +147,6 @@ namespace HappyClinic.ViewModel
 
         public InvoiceViewModel()
         {
-            DataProvider.Instance.DB.SaveChanges();
             List = new ObservableCollection<Invoice>(DataProvider.Instance.DB.Invoices);
             PatientInfo = new Patient();
             ExamInfo = new ExaminationForm();

@@ -57,7 +57,7 @@
                                     <hc:NumericUpDown Value="{Binding Qty}" Minimum="0" Margin="20,5,10,5" Width="130" VerticalContentAlignment="Center"
                 ShowClearButton="True" hc:InfoElement.Placeholder="Nhập số lượng" hc:InfoElement.Title="Số lượng" Style="{StaticResource NumericUpDownExtend}"/>
                                     <hc:ComboBox ItemsSource="{Binding AllUnits}" DisplayMemberPath="Name" SelectedValuePath="ID" SelectedValue="{Binding UnitID}" Width="130" Margin="10,5,20,5" 
-                Focusable="False" IsEditable="True" IsReadOnly="True" hc:InfoElement.Placeholder="Nhập đơn vị" hc:InfoElement.Title="Đơn vị tính" IsEnabled="True"/>
+                Focusable="False" IsEditable="True" IsReadOnly="True" hc:InfoElement.Placeholder="Chọn đơn vị" hc:InfoElement.Title="Đơn vị tính" IsEnabled="True"/>
                                 </StackPanel>
                                 
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
@@ -100,7 +100,7 @@
                                     <hc:NumericUpDown Value="{Binding Qty}" Minimum="0" Margin="20,5,10,5" Width="130" VerticalContentAlignment="Center"
                 ShowClearButton="True" hc:InfoElement.Placeholder="Nhập số lượng" hc:InfoElement.Title="Số lượng" Style="{StaticResource NumericUpDownExtend}"/>
                                     <hc:ComboBox ItemsSource="{Binding AllUnits}" DisplayMemberPath="Name" SelectedValuePath="Name" SelectedValue="{Binding UnitID}" Width="130" Margin="10,5,20,5" 
-                Focusable="False" IsEditable="True" IsReadOnly="True" hc:InfoElement.Placeholder="Nhập đơn vị" hc:InfoElement.Title="Đơn vị tính" IsEnabled="True"/>
+                Focusable="False" IsEditable="True" IsReadOnly="True" hc:InfoElement.Placeholder="Chọn đơn vị" hc:InfoElement.Title="Đơn vị tính" IsEnabled="True"/>
                                 </StackPanel>
 
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">

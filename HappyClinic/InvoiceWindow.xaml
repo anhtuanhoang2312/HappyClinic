@@ -90,6 +90,13 @@
                                             </StackPanel>
                                         </StackPanel>
 
+                                        <StackPanel Margin="20,5" Orientation="Horizontal">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock HorizontalAlignment="Left" Margin="5,0" Text="Chẩn đoán:" Style="{StaticResource TextBlockDefault}"/>
+                                                <TextBlock HorizontalAlignment="Left" Text="{Binding DiagnosisInfo}" Style="{StaticResource TextBlockDefaultBold}"/>
+                                            </StackPanel>
+                                        </StackPanel>
+
                                         <DataGrid Name="diseaseDataGrid" AutoGenerateColumns="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                               DataGrid.GridLinesVisibility="None" HeadersVisibility="Column" CanUserAddRows="False" SelectionMode="Single"
                               IsReadOnly="True" Margin="20,20,20,10" ItemsSource="{Binding AllDiseases}">

@@ -47,7 +47,7 @@
                                 </hc:ComboBox>
 
                                 <hc:DatePicker SelectedDate="{Binding Dob}" Margin="20,5" VerticalContentAlignment="Center"
-                hc:InfoElement.Placeholder="Chọn ngày" hc:InfoElement.Title="Ngày sinh (định dạng: MM/dd/yyyy)"/>
+                hc:InfoElement.Placeholder="Chọn ngày" hc:InfoElement.Title="Ngày sinh"/>
 
                                 <hc:TextBox Text="{Binding Phone}" Margin="20,5" VerticalContentAlignment="Center"
                 ShowClearButton="True" TextType="Common" hc:InfoElement.Placeholder="Nhập số điện thoại"
@@ -85,7 +85,7 @@
                                 </hc:ComboBox>
 
                                 <hc:DatePicker SelectedDate="{Binding Dob}" Margin="20,5" VerticalContentAlignment="Center"
-                hc:InfoElement.Placeholder="Chọn ngày" hc:InfoElement.Title="Ngày sinh (định dạng: MM/dd/yyyy)"/>
+                hc:InfoElement.Placeholder="Chọn ngày" hc:InfoElement.Title="Ngày sinh"/>
 
                                 <hc:TextBox Text="{Binding Phone}" Margin="20,5" VerticalContentAlignment="Center"
                 ShowClearButton="True" TextType="Common" hc:InfoElement.Placeholder="Nhập số điện thoại"
