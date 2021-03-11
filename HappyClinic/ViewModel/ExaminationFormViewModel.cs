@@ -232,7 +232,7 @@ namespace HappyClinic.ViewModel
                     IDdate = DateTime.Now,
                     Total = Sum,
                     PatientID = PatientID,
-                    Account = "tuan",
+                    Account = CurrentUser.Instance.User.Username,
                     ExamID = ID,
                     Status = "Chưa thanh toán"
                 };

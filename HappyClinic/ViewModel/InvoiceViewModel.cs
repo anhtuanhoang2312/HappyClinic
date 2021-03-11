@@ -34,6 +34,8 @@ namespace HappyClinic.ViewModel
                     Status = (SelectedItem.Status == "Đã thanh toán" ? "0" : "1");
                     PatientInfo = DataProvider.Instance.DB.Patients.Where(x => x.ID == SelectedItem.PatientID).Single();
                     ExamInfo = DataProvider.Instance.DB.ExaminationForms.Where(x => x.ID == SelectedItem.ExamID).Single();
+                    AllDiseases.Clear();
+                    AllMedicines.Clear();
 
                     int Sum = 0;
                     var DiseaseList = DataProvider.Instance.DB.DiseaseDetails.Where(x => x.ExamID == ExamInfo.ID);
