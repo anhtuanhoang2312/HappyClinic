@@ -38,10 +38,10 @@
                 TextType="Common" hc:InfoElement.Title="Mã cách dùng" IsEnabled="False"/>
 
                                 <hc:TextBox Text="{Binding ShortDsc}" Margin="20,5" VerticalContentAlignment="Center"
-                ShowClearButton="True" TextType="Common" hc:InfoElement.Placeholder="Nhập tên đơn vị" hc:InfoElement.Title="Mô tả"/>
+                ShowClearButton="True" TextType="Common" hc:InfoElement.Placeholder="Nhập cách dùng" hc:InfoElement.Title="Cách dùng ngắn gọn"/>
 
                                 <hc:TextBox Text="{Binding LongDsc}" Margin="20,5" VerticalContentAlignment="Center"
-                ShowClearButton="True" TextType="Common" hc:InfoElement.Placeholder="Nhập tên đơn vị" hc:InfoElement.Title="Cách dùng chi tiết"/>
+                ShowClearButton="True" TextType="Common" hc:InfoElement.Placeholder="Nhập cách dùng" hc:InfoElement.Title="Cách dùng chi tiết"/>
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
                                     <Button Command="hc:ControlCommands.Close" Width="100" Margin="5,0" Content="Đóng"/>
                                     <Button Command="{Binding AddCommand}" Content="Thêm" Width="100" Margin="5,0" Style="{StaticResource ButtonPrimary}"/>
@@ -63,10 +63,10 @@
                 TextType="Common" hc:InfoElement.Title="Mã cách dùng" IsEnabled="False"/>
 
                                 <hc:TextBox Text="{Binding ShortDsc}" Margin="20,5" VerticalContentAlignment="Center"
-                ShowClearButton="True" TextType="Common" hc:InfoElement.Placeholder="Nhập mô tả" hc:InfoElement.Title="Mô tả"/>
+                ShowClearButton="True" TextType="Common" hc:InfoElement.Placeholder="Nhập cách dùng" hc:InfoElement.Title="Cách dùng ngắn gọn"/>
 
                                 <hc:TextBox Text="{Binding LongDsc}" Margin="20,5" VerticalContentAlignment="Center"
-                ShowClearButton="True" TextType="Common" hc:InfoElement.Placeholder="Nhập cách dùng chi tiết" hc:InfoElement.Title="Cách dùng chi tiết"/>
+                ShowClearButton="True" TextType="Common" hc:InfoElement.Placeholder="Nhập cách dùng" hc:InfoElement.Title="Cách dùng chi tiết"/>
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
                                     <Button Command="hc:ControlCommands.Close" Width="100" Margin="5,0" Content="Đóng"/>
                                     <Button Command="{Binding EditCommand}" Content="Lưu" Width="100" Margin="5,0" Style="{StaticResource ButtonPrimary}"/>
@@ -87,7 +87,7 @@
                               IsReadOnly="True" Margin="10,0,10,10" ItemsSource="{Binding List}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Mã cách dùng" Width="*" Binding="{Binding ID, UpdateSourceTrigger=PropertyChanged}"/>
-                <DataGridTextColumn Header="Mô tả" Width="1.5*" Binding="{Binding ShortDsc, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Cách dùng ngắn gọn" Width="1.5*" Binding="{Binding ShortDsc, UpdateSourceTrigger=PropertyChanged}"/>
                 <DataGridTextColumn Header="Cách dùng chi tiết" Width="4.5*" Binding="{Binding LongDsc, UpdateSourceTrigger=PropertyChanged}"/>
             </DataGrid.Columns>
         </DataGrid>
