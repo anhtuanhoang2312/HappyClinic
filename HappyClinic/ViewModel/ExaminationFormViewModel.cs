@@ -223,6 +223,8 @@ namespace HappyClinic.ViewModel
                     };
                     Sum += (int)DataProvider.Instance.DB.Medicines.Where(x => x.Name == item.Name).Single().Price;
                     DataProvider.Instance.DB.MedicineDetails.Add(MedicineDetail);
+                    var medicine = DataProvider.Instance.DB.Medicines.Where(x => x.ID == MedicineDetail.MedicineID).Single();
+                    medicine.Qty -= MedicineDetail.Quantity;
                     DataProvider.Instance.DB.SaveChanges();
                 }
 
@@ -264,6 +266,12 @@ namespace HappyClinic.ViewModel
 
             SelectDiseaseCommand = new RelayCommand<object>((p) =>
             {
+                foreach (var item in ThisDisease)
+                {
+                    if (item.Name == NewDisease.Name)
+                        return false;
+                }
+
                 return true;
             }, (p) =>
             {
@@ -273,7 +281,12 @@ namespace HappyClinic.ViewModel
 
             SelectMedicineCommand = new RelayCommand<object>((p) =>
             {
-                var isExisted = DataProvider.Instance.DB.Patients.Where(x => x.ID == ID);
+                if (string.IsNullOrEmpty(TempMedicine.Name) || string.IsNullOrEmpty(TempUsage.ShortDsc))
+                    return false;
+
+                var medicine = DataProvider.Instance.DB.Medicines.Where(x => x.Name == TempMedicine.Name).Single();
+                if (TempQty > medicine.Qty)
+                    return false;
 
                 foreach (var item in TempList)
                 {

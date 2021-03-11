@@ -9,5 +9,6 @@ namespace HappyClinic.ViewModel
 {
     class MainViewModel : BaseViewModel
     {
+
     }
 }
