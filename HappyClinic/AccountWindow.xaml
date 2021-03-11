@@ -37,7 +37,7 @@
                                 <hc:TextBox Text="{Binding Username}" Margin="20,5" VerticalContentAlignment="Center"
                 TextType="Common" hc:InfoElement.Placeholder="Nhập tên đăng nhập" hc:InfoElement.Title="Tên đăng nhập"/>
 
-                                <hc:TextBox Text="{Binding Pass}" Margin="20,5" ShowClearButton="True" hc:InfoElement.Placeholder="Nhập mật khẩu" hc:InfoElement.Title="Mật khẩu"/>
+                                <hc:PasswordBox UnsafePassword="{Binding Pass}" IsSafeEnabled="False" ShowEyeButton="True" Margin="20,5" hc:InfoElement.Placeholder="Nhập mật khẩu" hc:InfoElement.Title="Mật khẩu"/>
 
                                 <hc:ComboBox SelectedIndex="{Binding isAdmin}" Margin="20,5" Focusable="False" IsEditable="True" IsReadOnly="True" hc:InfoElement.Placeholder="Chọn loại tài khoản" hc:InfoElement.Title="Loại tài khoản">
                                     <ComboBoxItem>Nhân viên</ComboBoxItem>
@@ -64,7 +64,7 @@
                                 <hc:TextBox Text="{Binding Username}" Margin="20,5" VerticalContentAlignment="Center"
                 TextType="Common" hc:InfoElement.Placeholder="Nhập tên đăng nhập" hc:InfoElement.Title="Tên đăng nhập"/>
 
-                                <hc:TextBox Text="{Binding NewPass}" ShowClearButton="True" Margin="20,5" hc:InfoElement.Placeholder="Nhập mật khẩu mới" hc:InfoElement.Title="Mật khẩu mới"/>
+                                <hc:PasswordBox UnsafePassword="{Binding NewPass}" IsSafeEnabled="False" ShowEyeButton="True" Margin="20,5" hc:InfoElement.Placeholder="Nhập mật khẩu mới" hc:InfoElement.Title="Mật khẩu mới"/>
 
                                 <hc:ComboBox SelectedIndex="{Binding isAdmin}" Margin="20,5" Focusable="False" IsEditable="True" IsReadOnly="True" hc:InfoElement.Placeholder="Chọn loại tài khoản" hc:InfoElement.Title="Loại tài khoản">
                                     <ComboBoxItem>Nhân viên</ComboBoxItem>
