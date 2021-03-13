@@ -242,6 +242,8 @@ namespace HappyClinic.ViewModel
                 DataProvider.Instance.DB.SaveChanges();
 
                 Clear();
+
+                MessageBox.Show("Thêm phiếu khám thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
             });
 
             SearchCommand = new RelayCommand<object>((p) =>

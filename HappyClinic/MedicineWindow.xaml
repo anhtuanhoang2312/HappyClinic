@@ -40,8 +40,8 @@
                                 <hc:TextBox Text="{Binding Name}" Margin="20,5" VerticalContentAlignment="Center"
                 ShowClearButton="True" TextType="Common" hc:InfoElement.Placeholder="Nhập tên thuốc" hc:InfoElement.Title="Tên thuốc"/>
 
-                                <hc:TextBox Text="{Binding Price}" Margin="20,5" VerticalContentAlignment="Center"
-                ShowClearButton="True" TextType="Common" hc:InfoElement.Placeholder="Nhập đơn giá" hc:InfoElement.Title="Đơn giá"/>
+                                <hc:NumericUpDown Value="{Binding Price}" Minimum="0" Increment="500" Margin="20,5" VerticalContentAlignment="Center"
+                ShowClearButton="True" hc:InfoElement.Placeholder="Nhập đơn giá" hc:InfoElement.Title="Đơn giá" Style="{StaticResource NumericUpDownExtend}"/>
 
                                 <hc:TextBox Text="{Binding Supplier}" Margin="20,5" VerticalContentAlignment="Center"
                 ShowClearButton="True" TextType="Common" hc:InfoElement.Placeholder="Nhập nhà cung cấp" hc:InfoElement.Title="Nhà cung cấp"/>
@@ -83,8 +83,8 @@
                                 <hc:TextBox Text="{Binding Name}" Margin="20,5" VerticalContentAlignment="Center"
                 ShowClearButton="True" TextType="Common" hc:InfoElement.Placeholder="Nhập tên thuốc" hc:InfoElement.Title="Tên thuốc"/>
 
-                                <hc:TextBox Text="{Binding Price}" Margin="20,5" VerticalContentAlignment="Center"
-                ShowClearButton="True" TextType="Common" hc:InfoElement.Placeholder="Nhập đơn giá" hc:InfoElement.Title="Đơn giá"/>
+                                <hc:NumericUpDown Value="{Binding Price}" Minimum="0" Increment="500" Margin="20,5" VerticalContentAlignment="Center"
+                ShowClearButton="True" hc:InfoElement.Placeholder="Nhập đơn giá" hc:InfoElement.Title="Đơn giá" Style="{StaticResource NumericUpDownExtend}"/>
 
                                 <hc:TextBox Text="{Binding Supplier}" Margin="20,5" VerticalContentAlignment="Center"
                 ShowClearButton="True" TextType="Common" hc:InfoElement.Placeholder="Nhập nhà cung cấp" hc:InfoElement.Title="Nhà cung cấp"/>

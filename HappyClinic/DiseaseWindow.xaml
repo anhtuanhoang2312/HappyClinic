@@ -40,8 +40,9 @@
                                 <hc:TextBox Text="{Binding Name}" Margin="20,5" VerticalContentAlignment="Center"
                 ShowClearButton="True" TextType="Common" hc:InfoElement.Placeholder="Nhập tên bệnh" hc:InfoElement.Title="Tên"/>
 
-                                <hc:TextBox Text="{Binding Price}" Margin="20,5" VerticalContentAlignment="Center"
-                ShowClearButton="True" TextType="Int"  hc:InfoElement.Placeholder="Nhập giá khám" hc:InfoElement.Title="Giá"/>
+                                <hc:NumericUpDown Value="{Binding Price}" Minimum="0" Increment="500" Margin="20,5" VerticalContentAlignment="Center"
+                ShowClearButton="True" hc:InfoElement.Placeholder="Nhập giá khám" hc:InfoElement.Title="Giá" Style="{StaticResource NumericUpDownExtend}"/>
+                                
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
                                     <Button Command="hc:ControlCommands.Close" Width="100" Margin="5,0" Content="Đóng"/>
                                     <Button Command="{Binding AddCommand}" Content="Thêm" Width="100" Margin="5,0" Style="{StaticResource ButtonPrimary}"/>
@@ -65,8 +66,9 @@
                                 <hc:TextBox Text="{Binding Name}" Margin="20,5" VerticalContentAlignment="Center"
                 ShowClearButton="True" TextType="Common" hc:InfoElement.Placeholder="Nhập tên bệnh" hc:InfoElement.Title="Tên bệnh"/>
 
-                                <hc:TextBox Text="{Binding Price}" Margin="20,5" VerticalContentAlignment="Center"
-                ShowClearButton="True" TextType="Common" hc:InfoElement.Placeholder="Nhập giá khám" hc:InfoElement.Title="Giá khám"/>
+                                <hc:NumericUpDown Value="{Binding Price}" Minimum="0" Increment="500" Margin="20,5" VerticalContentAlignment="Center"
+                ShowClearButton="True" hc:InfoElement.Placeholder="Nhập giá khám" hc:InfoElement.Title="Giá" Style="{StaticResource NumericUpDownExtend}"/>
+                                
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
                                     <Button Command="hc:ControlCommands.Close" Width="100" Margin="5,0" Content="Đóng"/>
                                     <Button Command="{Binding EditCommand}" Content="Lưu" Width="100" Margin="5,0" Style="{StaticResource ButtonPrimary}"/>

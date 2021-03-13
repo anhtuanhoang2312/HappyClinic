@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace HappyClinic.ViewModel
@@ -102,6 +103,8 @@ namespace HappyClinic.ViewModel
                 List.Add(MedicineUnit);
 
                 Clear();
+
+                MessageBox.Show($"Thêm đơn vị '{Name}' thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
             });
 
             EditCommand = new RelayCommand<object>((p) =>
@@ -126,6 +129,8 @@ namespace HappyClinic.ViewModel
                 DataProvider.Instance.DB.SaveChanges();
 
                 List = new ObservableCollection<MedicineUnit>(DataProvider.Instance.DB.MedicineUnits);
+
+                MessageBox.Show($"Lưu đơn vị '{Name}' thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
             });
 
             SearchCommand = new RelayCommand<object>((p) =>

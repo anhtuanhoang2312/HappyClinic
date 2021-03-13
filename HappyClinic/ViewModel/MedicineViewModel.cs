@@ -138,6 +138,8 @@ namespace HappyClinic.ViewModel
                 List.Add(Medicine);
 
                 Clear();
+
+                MessageBox.Show($"Thêm thông tin thuốc '{Name}' thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
             });
 
             EditCommand = new RelayCommand<object>((p) =>
@@ -165,6 +167,8 @@ namespace HappyClinic.ViewModel
                 DataProvider.Instance.DB.SaveChanges();
 
                 List = new ObservableCollection<Medicine>(DataProvider.Instance.DB.Medicines);
+
+                MessageBox.Show($"Lưu thông tin thuốc '{Name}' thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
             });
 
             SearchCommand = new RelayCommand<object>((p) =>
