@@ -62,7 +62,7 @@
                             <TextBlock Margin="20,20,0,10" Text="Sửa thông tin tài khoản" Style="{StaticResource TextBlockTitleBold}" HorizontalAlignment="Left"/>
                             <StackPanel Grid.Row="1">
                                 <hc:TextBox Text="{Binding Username}" Margin="20,5" VerticalContentAlignment="Center"
-                TextType="Common" hc:InfoElement.Placeholder="Nhập tên đăng nhập" hc:InfoElement.Title="Tên đăng nhập"/>
+                TextType="Common" hc:InfoElement.Placeholder="Nhập tên đăng nhập" hc:InfoElement.Title="Tên đăng nhập" IsEnabled="False"/>
 
                                 <hc:PasswordBox UnsafePassword="{Binding NewPass}" IsSafeEnabled="False" ShowEyeButton="True" Margin="20,5" hc:InfoElement.Placeholder="Nhập mật khẩu mới" hc:InfoElement.Title="Mật khẩu mới"/>
 

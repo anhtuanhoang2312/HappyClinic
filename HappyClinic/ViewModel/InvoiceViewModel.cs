@@ -184,6 +184,8 @@ namespace HappyClinic.ViewModel
                 DataProvider.Instance.DB.SaveChanges();
 
                 List = new ObservableCollection<Invoice>(DataProvider.Instance.DB.Invoices);
+
+                MessageBox.Show("Cập nhật trạng thái thanh toán thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
             });
 
             SearchCommand = new RelayCommand<object>((p) =>

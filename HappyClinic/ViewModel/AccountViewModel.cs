@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace HappyClinic.ViewModel
@@ -116,6 +117,8 @@ namespace HappyClinic.ViewModel
                 List.Add(Account);
 
                 Clear();
+
+                MessageBox.Show($"Thêm thông tin tài khoản '{Username}' thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
             });
 
             EditCommand = new RelayCommand<object>((p) =>
@@ -124,10 +127,6 @@ namespace HappyClinic.ViewModel
                     return false;
 
                 if (string.IsNullOrEmpty(Username) || string.IsNullOrEmpty(isAdmin.ToString()) || string.IsNullOrEmpty(Status))
-                    return false;
-
-                var isExisted = DataProvider.Instance.DB.Accounts.Where(x => x.Username == Username);
-                if (isExisted.Count() != 0)
                     return false;
 
                 return true;
@@ -146,6 +145,8 @@ namespace HappyClinic.ViewModel
                 DataProvider.Instance.DB.SaveChanges();
 
                 List = new ObservableCollection<Account>(DataProvider.Instance.DB.Accounts);
+
+                MessageBox.Show($"Lưu thông tin tài khoản '{Username}' thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
             });
 
             SearchCommand = new RelayCommand<object>((p) =>
