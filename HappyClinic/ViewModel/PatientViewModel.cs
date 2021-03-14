@@ -123,9 +123,9 @@ namespace HappyClinic.ViewModel
 
                 List.Add(Patient);
 
-                Clear();
-
                 MessageBox.Show($"Thêm thông tin bệnh nhân '{Name}' thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                Clear();
             });
 
             EditCommand = new RelayCommand<object>((p) =>

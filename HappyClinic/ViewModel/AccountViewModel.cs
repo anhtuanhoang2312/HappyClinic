@@ -99,7 +99,7 @@ namespace HappyClinic.ViewModel
 
             AddCommand = new RelayCommand<object>((p) =>
             {
-                if (string.IsNullOrEmpty(Username) || string.IsNullOrEmpty(Pass) || string.IsNullOrEmpty(Status))
+                if (string.IsNullOrEmpty(Username) || string.IsNullOrEmpty(Pass) || string.IsNullOrEmpty(isAdmin.ToString()))
                     return false;
 
                 var isExisted = DataProvider.Instance.DB.Accounts.Where(x => x.Username == Username);
@@ -116,9 +116,9 @@ namespace HappyClinic.ViewModel
 
                 List.Add(Account);
 
-                Clear();
-
                 MessageBox.Show($"Thêm thông tin tài khoản '{Username}' thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                Clear();
             });
 
             EditCommand = new RelayCommand<object>((p) =>
