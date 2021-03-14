@@ -107,9 +107,9 @@ namespace HappyClinic.ViewModel
 
                 List.Add(MedicineUsage);
 
-                Clear();
-
                 MessageBox.Show("Thêm cách dùng thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                Clear();
             });
 
             EditCommand = new RelayCommand<object>((p) =>
